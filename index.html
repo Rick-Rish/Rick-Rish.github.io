@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>KLM|PTFS</title>
+  <title>KLM PTFS</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-image 1s ease-in-out;
+      color: white;
       text-align: center;
     }
 
-    /* Navigation bar styles */
     .navbar {
-      background-color: #005bac;
+      background-color: rgba(0, 0, 0, 0.7);
       overflow: hidden;
       display: flex;
       justify-content: center;
@@ -26,20 +29,24 @@
     }
 
     .navbar a:hover {
-      background-color: #003f87;
+      background-color: rgba(255, 255, 255, 0.2);
     }
 
     .content {
-      padding: 60px;
+      padding: 80px 20px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      margin: 100px auto;
+      max-width: 700px;
     }
 
     h1 {
-      color: #005bac;
+      color: #ffffff;
     }
 
     .tagline {
       font-size: 18px;
-      color: #333;
+      color: #ddd;
     }
   </style>
 </head>
@@ -52,12 +59,34 @@
     <a href="booking.html">Booking</a>
   </div>
 
-  <!-- 🔹 Main Page Content -->
+  <!-- 🔹 Content -->
   <div class="content">
-    <h1>Welcome aboard <span style="color:#005bac;">KLM</span> PTFS</h1>
+    <h1>Welcome aboard <span style="color:#add8ff;">KLM</span> PTFS</h1>
     <p class="tagline">Join a community of virtual aviation fans in Pilot Training Flight Simulator.</p>
     <p>🛫 Booking System and Discord integration coming soon.</p>
   </div>
+
+  <!-- 🔹 JavaScript to Change Background Image -->
+  <script>
+    const images = [
+      "https://cdn.discordapp.com/attachments/1338462418791043083/1396954328790728824/Zrzut_ekranu_2025-07-21_181427.png?ex=687ff69a&is=687ea51a&hm=bcadfcacb1c32c7f50789034e8185c193228420b6181df7b348291a7e65fcb46",
+      "https://cdn.discordapp.com/attachments/1338462418791043083/1396954328543002664/Zrzut_ekranu_2025-07-21_181758.png?ex=687ff69a&is=687ea51a&hm=055ba5ed1ce27a10d3512a5b5141eeb0d928a7fb736b50a54da0d49242e053d2&",
+      "https://cdn.discordapp.com/attachments/1338462418791043083/1396954328178229348/Zrzut_ekranu_2025-07-21_182248.png?ex=687ff699&is=687ea519&hm=cf75d62c54f0d9d1628a2a95db025d0d233a244008db43cd629eb3f2187d20fb&",
+      "https://cdn.discordapp.com/attachments/1338462418791043083/1396954327767322736/Zrzut_ekranu_2025-07-21_183715.png?ex=687ff699&is=687ea519&hm=95d570d4b689c9514840e6da43b7707d540dcada440774cf19ad64f6c5f74942&",
+      "https://cdn.discordapp.com/attachments/1338462418791043083/1396954327171596338/Zrzut_ekranu_2025-07-21_183810.png?ex=687ff699&is=687ea519&hm=0fa0b65a7ebbd31ac76e296e88795bbc72ce45260d1def7215c9c2add950545f&"
+    ];
+
+    let index = 0;
+
+    function changeBackground() {
+      document.body.style.backgroundImage = `url('${images[index]}')`;
+      index = (index + 1) % images.length;
+    }
+
+    // Set initial background and start cycle
+    changeBackground();
+    setInterval(changeBackground, 30000); // every 30 seconds
+  </script>
 
 </body>
 </html>
